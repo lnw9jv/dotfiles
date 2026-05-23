@@ -10,6 +10,7 @@ Each top-level directory mirrors the home directory structure so Stow can symlin
 dotfiles/
 ├── bash/          # Bash config (.bash_profile, .bashrc)
 ├── claude-code/   # Claude Code settings & skills
+├── cmux/          # cmux session manager
 ├── fish/          # Fish shell config
 ├── fsh/           # fast-syntax-highlighting theme
 ├── ghostty/       # Ghostty terminal
@@ -97,6 +98,7 @@ stow */
 | Goose AI agent | `goose/.config/goose/` |
 | Nushell | `nushell/.config/nushell/` |
 | Lazygit | `lazygit/.config/lazygit/config.yml` |
+| cmux session manager | `cmux/.config/cmux/` |
 | Fish shell | `fish/.config/fish/` |
 | Opencode AI editor | `opencode/.config/opencode/` |
 
