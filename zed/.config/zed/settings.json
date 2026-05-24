@@ -120,6 +120,7 @@
     "show": "auto",
   },
   "terminal": {
+    "show_count_badge": true,
     "scrollbar": {
       "show": "system",
     },
