@@ -50,4 +50,5 @@
       "command": ["kubernetes-mcp-server", "--read-only"],
     },
   },
+  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
 }
