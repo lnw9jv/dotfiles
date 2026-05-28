@@ -45,10 +45,6 @@
       "type": "remote",
       "url": "https://knowledge-mcp.global.api.aws",
     },
-    "sem": {
-      "type": "local",
-      "command": ["sem", "mcp"],
-    },
     "kubernetes": {
       "type": "local",
       "command": ["kubernetes-mcp-server", "--read-only"],
