@@ -16,3 +16,5 @@ rtk-rewrite.sh
 # AI assistant artifacts
 context-snapshot.json
 .cto-toolkit
+session-log.md
+.remember
