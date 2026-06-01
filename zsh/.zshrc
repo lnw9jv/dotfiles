@@ -67,10 +67,10 @@ zinit wait lucid for \
     OMZP::colored-man-pages
 
 # Load completions
-zinit wait lucid as"completion" for \
-    OMZP::terraform/_terraform \
-    OMZP::redis-cli/_redis-cli \
-    OMZP::httpie/_httpie
+# zinit wait lucid as"completion" for \
+#     OMZP::terraform/_terraform \
+#     OMZP::redis-cli/_redis-cli \
+#     OMZP::httpie/_httpie
 
 # Load custom plugins
 zinit ice wait lucid multisrc"(argocd|awsctx|k8sgpt|kafkactl|kubectl-argo-rollouts|popeye|pulumi|goose|television|tenv|sem-cli).plugin.zsh"
