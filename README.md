@@ -65,7 +65,7 @@ stow */
 - **OMZ libraries**: git, history, key-bindings, directories, clipboard, grep
 - **Plugins**: git, eza, fzf, zoxide, aws, gcloud, docker, minikube, fluxcd, rust, asdf, 1password, tailscale, and more
 - **Completion plugins**: fzf-tab, zsh-completions, fast-syntax-highlighting, zsh-autopair, zsh-you-should-use
-- **Custom plugins**: argocd, goose, k8sgpt, kafkactl, kubectl-argo-rollouts, popeye, pulumi, sem-cli, television, tenv
+- **Custom plugins**: argocd, goose, k8sgpt, kafkactl, kubectl-argo-rollouts, popeye, pulumi, sem-cli, television, tenv, terraform
 
 ### Editors
 
