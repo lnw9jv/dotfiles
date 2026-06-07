@@ -19,7 +19,7 @@
   },
   "agent_servers": {
     "opencode": {
-      "type": "registry"
+      "type": "registry",
     },
     "codex-acp": {
       "type": "registry",
@@ -73,11 +73,11 @@
     },
     "inline_assistant_model": {
       "provider": "ollama",
-      "model": "gemma4:31b-cloud",
+      "model": "nemotron-3-ultra:cloud",
     },
     "commit_message_model": {
       "provider": "ollama",
-      "model": "gemma4:31b-cloud",
+      "model": "nemotron-3-ultra:cloud",
     },
     "enable_feedback": false,
   },
