@@ -82,6 +82,7 @@
     "enable_feedback": false,
   },
   "edit_predictions": {
+    "allow_data_collection": "no",
     "provider": "copilot",
     "ollama": {
       "api_url": "http://localhost:11434",
