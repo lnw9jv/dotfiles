@@ -19,6 +19,10 @@
   },
   "agent_servers": {
     "opencode": {
+      "default_config_options": {
+        "effort": "high",
+        "model": "opencode/nemotron-3-ultra-free"
+      },
       "type": "registry",
     },
     "codex-acp": {
