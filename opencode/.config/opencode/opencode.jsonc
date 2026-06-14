@@ -45,9 +45,17 @@
       "type": "remote",
       "url": "https://knowledge-mcp.global.api.aws",
     },
+    "microsoft-docs": {
+      "type": "remote",
+      "url": "https://learn.microsoft.com/api/mcp",
+    },
     "kubernetes": {
       "type": "local",
       "command": ["kubernetes-mcp-server", "--read-only"],
+    },
+    "mempalace": {
+      "type": "local",
+      "command": ["mempalace-mcp"],
     },
   },
   "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
