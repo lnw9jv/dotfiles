@@ -203,7 +203,13 @@
     "astral@astral-sh": true,
     "modern-go-guidelines@goland-claude-marketplace": true,
     "token-saver@claude-community": true,
-    "pr-review-toolkit@claude-plugins-official": true
+    "pr-review-toolkit@claude-plugins-official": true,
+    "playground@claude-plugins-official": true,
+    "microsoft-docs@claude-plugins-official": true,
+    "session-report@claude-plugins-official": true,
+    "aws-core@claude-plugins-official": true,
+    "aws-dev-toolkit@claude-plugins-official": true,
+    "aws-agents@claude-plugins-official": true
   },
   "sandbox": {
     "enabled": true,
