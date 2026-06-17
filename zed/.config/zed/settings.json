@@ -1,242 +1,267 @@
 {
-  "cli_default_open_behavior": "new_window",
-  "project_panel": {
-    "dock": "right"
-  },
-  "outline_panel": {
-    "dock": "right"
-  },
-  "collaboration_panel": {
-    "dock": "right"
-  },
-  "agent_servers": {
-    "opencode": {
-      "default_config_options": {
-        "effort": "high",
-        "model": "opencode/nemotron-3-ultra-free"
-      },
-      "type": "registry"
-    },
-    "codex-acp": {
-      "type": "registry"
-    },
-    "claude-acp": {
-      "type": "registry"
-    },
-    "goose": {
-      "type": "registry"
-    },
-    "github-copilot-cli": {
-      "type": "registry"
-    },
-    "github-copilot": {
-      "type": "registry"
-    }
-  },
-  "git_panel": {
-    "dock": "right",
-    "tree_view": true
-  },
-  "context_servers": {
-    "Context7": {
-      "url": "https://mcp.context7.com/mcp/oauth",
-      "enabled": true
-    },
-    "aws-knowledge": {
-      "url": "https://knowledge-mcp.global.api.aws",
-      "enabled": true
-    },
-    "gh_grep": {
-      "url": "https://mcp.grep.app",
-      "enabled": true
-    },
-    "deepwiki": {
-      "url": "https://mcp.deepwiki.com/mcp",
-      "enabled": true
-    }
-  },
-  "auto_update_extensions": {
-    "harper": true
-  },
-  "agent": {
-    "sidebar_side": "left",
-    "flexible": true,
-    "dock": "left",
-    "use_modifier_to_send": false,
-    "default_model": {
-      "provider": "ollama",
-      "model": "gemma4:31b-cloud"
-    },
-    "inline_assistant_model": {
-      "provider": "ollama",
-      "model": "nemotron-3-ultra:cloud"
-    },
-    "commit_message_model": {
-      "provider": "ollama",
-      "model": "nemotron-3-ultra:cloud"
-    },
-    "enable_feedback": false
-  },
-  "edit_predictions": {
-    "allow_data_collection": "no",
-    "provider": "copilot",
-    "ollama": {
-      "api_url": "http://localhost:11434",
-      "prompt_format": "infer",
-      "max_output_tokens": 256000,
-      "model": "gemma4:31b-cloud"
-    },
-    "disabled_globs": [
-      "**/.env*",
-      "**/*.pem",
-      "**/*.key",
-      "**/*.cert",
-      "**/*.crt",
-      "**/*.log",
-      "**/secrets.yml"
-    ],
-    "mode": "subtle"
-  },
-  "vim_mode": true,
-  "relative_line_numbers": "enabled",
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
-  "ui_font_size": 16,
-  "buffer_font_size": 13,
-  "soft_wrap": "editor_width",
-  "show_whitespaces": "all",
-  "theme": "Catppuccin Frappé",
-  "icon_theme": "Catppuccin Frappé",
-  "tabs": {
-    "file_icons": true,
-    "git_status": true,
-    "close_position": "left"
-  },
-  "indent_guides": {
-    "enabled": true,
-    "coloring": "indent_aware",
-    "background_coloring": "indent_aware"
-  },
-  "minimap": {
-    "show": "auto"
-  },
-  "terminal": {
-    "show_count_badge": true,
-    "scrollbar": {
-      "show": "system"
-    },
-    "copy_on_select": true
-  },
-  "telemetry": {
-    "metrics": false
-  },
-  "semantic_tokens": "combined",
-  "lsp": {
-    "gopls": {
-      "initialization_options": {
-        "hints": {
-          "assignVariableTypes": true,
-          "compositeLiteralFields": true,
-          "compositeLiteralTypes": true,
-          "constantValues": true,
-          "functionTypeParameters": true,
-          "parameterNames": true,
-          "rangeVariableTypes": true
-        }
-      }
-    },
-    "solargraph": {
-      "initialization_options": {
-        "diagnostics": true,
-        "formatting": true
-      }
-    },
-    "terraform-ls": {
-      "initialization_options": {
-        "experimentalFeatures": {
-          "prefillRequiredFields": true,
-          "validateOnSave": true
-        }
-      }
-    }
-  },
-  "languages": {
-    "Python": {
-      "language_servers": ["ty", "ruff"],
-      "format_on_save": "on",
-      "formatter": [
-        {
-          "code_action": "source.organizeImports.ruff"
-        },
-        {
-          "code_action": "source.fixAll.ruff"
-        },
-        {
-          "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
-    },
-    "Ruby": {
-      "language_servers": ["solargraph"]
-    },
-    "Lua": {
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "stylua",
-          "arguments": ["-"]
-        }
-      }
-    },
-    "Terraform": {
-      "language_servers": ["terraform-ls"],
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "terraform",
-          "arguments": ["fmt", "-"]
-        }
-      }
-    },
-    "TOML": {
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "taplo",
-          "arguments": ["format", "-"]
-        }
-      }
-    }
-  },
-  "file_types": {
-    "Helm": [
-      "**/templates/**/*.tpl",
-      "**/templates/**/*.yaml",
-      "**/templates/**/*.yml",
-      "**/helmfile.d/**/*.yaml",
-      "**/helmfile.d/**/*.yml",
-      "**/values*.yaml"
-    ],
-    "Ansible": [
-      "**.ansible.yml",
-      "**.ansible.yaml",
-      "**/defaults/*.yml",
-      "**/defaults/*.yaml",
-      "**/meta/*.yml",
-      "**/meta/*.yaml",
-      "**/tasks/*.yml",
-      "**/tasks/*.yaml",
-      "**/handlers/*.yml",
-      "**/handlers/*.yaml",
-      "**/group_vars/*.yml",
-      "**/group_vars/*.yaml",
-      "**/host_vars/*.yml",
-      "**/host_vars/*.yaml",
-      "**/playbooks/*.yml",
-      "**/playbooks/*.yaml",
-      "**playbook*.yml",
-      "**playbook*.yaml"
-    ]
-  }
+	"cli_default_open_behavior": "new_window",
+	"project_panel": {
+		"dock": "right"
+	},
+	"outline_panel": {
+		"dock": "right"
+	},
+	"collaboration_panel": {
+		"dock": "right"
+	},
+	"agent_servers": {
+		"opencode": {
+			"default_config_options": {
+				"effort": "high",
+				"model": "opencode/nemotron-3-ultra-free"
+			},
+			"type": "registry"
+		},
+		"codex-acp": {
+			"type": "registry"
+		},
+		"claude-acp": {
+			"type": "registry"
+		},
+		"goose": {
+			"type": "registry"
+		},
+		"github-copilot-cli": {
+			"type": "registry"
+		},
+		"github-copilot": {
+			"type": "registry"
+		}
+	},
+	"git_panel": {
+		"dock": "right",
+		"tree_view": true
+	},
+	"context_servers": {
+		"Context7": {
+   "url": "https://mcp.context7.com/mcp/oauth",
+			"enabled": true
+		},
+		"aws-knowledge": {
+   "url": "https://knowledge-mcp.global.api.aws",
+			"enabled": true
+		},
+		"gh_grep": {
+   "url": "https://mcp.grep.app",
+			"enabled": true
+		},
+		"deepwiki": {
+   "url": "https://mcp.deepwiki.com/mcp",
+			"enabled": true
+		}
+	},
+	"auto_update_extensions": {
+		"harper": true
+	},
+	"agent": {
+		"sidebar_side": "left",
+		"flexible": true,
+		"dock": "left",
+		"use_modifier_to_send": false,
+		"default_model": {
+			"provider": "ollama",
+			"model": "gemma4:31b-cloud"
+		},
+		"inline_assistant_model": {
+			"provider": "ollama",
+			"model": "nemotron-3-ultra:cloud"
+		},
+		"commit_message_model": {
+			"provider": "ollama",
+			"model": "nemotron-3-ultra:cloud"
+		},
+		"enable_feedback": false
+	},
+	"edit_predictions": {
+		"allow_data_collection": "no",
+		"provider": "copilot",
+		"ollama": {
+			"api_url": "http://localhost:11434",
+			"prompt_format": "infer",
+			"max_output_tokens": 256000,
+			"model": "gemma4:31b-cloud"
+		},
+		"disabled_globs": [
+			"**/.env*",
+			"**/*.pem",
+			"**/*.key",
+			"**/*.cert",
+			"**/*.crt",
+			"**/*.log",
+			"**/secrets.yml"
+		],
+		"mode": "subtle"
+	},
+	"vim_mode": true,
+	"relative_line_numbers": "enabled",
+	"buffer_font_family": "JetBrainsMono Nerd Font Mono",
+	"ui_font_size": 16,
+	"buffer_font_size": 13,
+	"soft_wrap": "editor_width",
+	"show_whitespaces": "all",
+	"theme": "Catppuccin Frappé",
+	"icon_theme": "Catppuccin Frappé",
+	"tabs": {
+		"file_icons": true,
+		"git_status": true,
+		"close_position": "left"
+	},
+	"indent_guides": {
+		"enabled": true,
+		"coloring": "indent_aware",
+		"background_coloring": "indent_aware"
+	},
+	"minimap": {
+		"show": "auto"
+	},
+	"terminal": {
+		"show_count_badge": true,
+		"scrollbar": {
+			"show": "system"
+		},
+		"copy_on_select": true
+	},
+	"telemetry": {
+		"metrics": false
+	},
+	"semantic_tokens": "combined",
+	"lsp": {
+		"gopls": {
+			"initialization_options": {
+				"hints": {
+					"assignVariableTypes": true,
+					"compositeLiteralFields": true,
+					"compositeLiteralTypes": true,
+					"constantValues": true,
+					"functionTypeParameters": true,
+					"parameterNames": true,
+					"rangeVariableTypes": true
+				}
+			}
+		},
+		"solargraph": {
+			"initialization_options": {
+				"diagnostics": true,
+				"formatting": true
+			}
+		},
+		"terraform-ls": {
+			"initialization_options": {
+				"experimentalFeatures": {
+					"prefillRequiredFields": true,
+					"validateOnSave": true
+				}
+			}
+		}
+	},
+	"languages": {
+		"CSS": { "formatter": { "language_server": { "name": "biome" } } },
+		"HTML": { "formatter": { "language_server": { "name": "biome" } } },
+		"JSON": { "formatter": { "language_server": { "name": "biome" } } },
+		"JSONC": { "formatter": { "language_server": { "name": "biome" } } },
+		"JavaScript": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"code_actions_on_format": {
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		},
+		"TypeScript": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"code_actions_on_format": {
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		},
+		"TSX": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"code_actions_on_format": {
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		},
+		"Python": {
+			"language_servers": ["ty", "ruff"],
+			"format_on_save": "on",
+			"formatter": [
+				{
+					"code_action": "source.organizeImports.ruff"
+				},
+				{
+					"code_action": "source.fixAll.ruff"
+				},
+				{
+					"language_server": {
+						"name": "ruff"
+					}
+				}
+			]
+		},
+		"Ruby": {
+			"language_servers": ["solargraph"]
+		},
+		"Lua": {
+			"format_on_save": "on",
+			"formatter": {
+				"external": {
+					"command": "stylua",
+					"arguments": ["-"]
+				}
+			}
+		},
+		"Terraform": {
+			"language_servers": ["terraform-ls"],
+			"format_on_save": "on",
+			"formatter": {
+				"external": {
+					"command": "terraform",
+					"arguments": ["fmt", "-"]
+				}
+			}
+		},
+		"TOML": {
+			"format_on_save": "on",
+			"formatter": {
+				"external": {
+					"command": "taplo",
+					"arguments": ["format", "-"]
+				}
+			}
+		}
+	},
+	"file_types": {
+		"Helm": [
+			"**/templates/**/*.tpl",
+			"**/templates/**/*.yaml",
+			"**/templates/**/*.yml",
+			"**/helmfile.d/**/*.yaml",
+			"**/helmfile.d/**/*.yml",
+			"**/values*.yaml"
+		],
+		"Ansible": [
+			"**.ansible.yml",
+			"**.ansible.yaml",
+			"**/defaults/*.yml",
+			"**/defaults/*.yaml",
+			"**/meta/*.yml",
+			"**/meta/*.yaml",
+			"**/tasks/*.yml",
+			"**/tasks/*.yaml",
+			"**/handlers/*.yml",
+			"**/handlers/*.yaml",
+			"**/group_vars/*.yml",
+			"**/group_vars/*.yaml",
+			"**/host_vars/*.yml",
+			"**/host_vars/*.yaml",
+			"**/playbooks/*.yml",
+			"**/playbooks/*.yaml",
+			"**playbook*.yml",
+			"**playbook*.yaml"
+		]
+	}
 }
