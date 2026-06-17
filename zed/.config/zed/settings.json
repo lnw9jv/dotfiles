@@ -1,21 +1,13 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
   "cli_default_open_behavior": "new_window",
   "project_panel": {
-    "dock": "right",
+    "dock": "right"
   },
   "outline_panel": {
-    "dock": "right",
+    "dock": "right"
   },
   "collaboration_panel": {
-    "dock": "right",
+    "dock": "right"
   },
   "agent_servers": {
     "opencode": {
@@ -23,48 +15,48 @@
         "effort": "high",
         "model": "opencode/nemotron-3-ultra-free"
       },
-      "type": "registry",
+      "type": "registry"
     },
     "codex-acp": {
-      "type": "registry",
+      "type": "registry"
     },
     "claude-acp": {
-      "type": "registry",
+      "type": "registry"
     },
     "goose": {
-      "type": "registry",
+      "type": "registry"
     },
     "github-copilot-cli": {
-      "type": "registry",
+      "type": "registry"
     },
     "github-copilot": {
-      "type": "registry",
-    },
+      "type": "registry"
+    }
   },
   "git_panel": {
     "dock": "right",
-    "tree_view": true,
+    "tree_view": true
   },
   "context_servers": {
     "Context7": {
       "url": "https://mcp.context7.com/mcp/oauth",
-      "enabled": true,
+      "enabled": true
     },
     "aws-knowledge": {
       "url": "https://knowledge-mcp.global.api.aws",
-      "enabled": true,
+      "enabled": true
     },
     "gh_grep": {
       "url": "https://mcp.grep.app",
-      "enabled": true,
+      "enabled": true
     },
     "deepwiki": {
       "url": "https://mcp.deepwiki.com/mcp",
-      "enabled": true,
-    },
+      "enabled": true
+    }
   },
   "auto_update_extensions": {
-    "harper": true,
+    "harper": true
   },
   "agent": {
     "sidebar_side": "left",
@@ -73,17 +65,17 @@
     "use_modifier_to_send": false,
     "default_model": {
       "provider": "ollama",
-      "model": "gemma4:31b-cloud",
+      "model": "gemma4:31b-cloud"
     },
     "inline_assistant_model": {
       "provider": "ollama",
-      "model": "nemotron-3-ultra:cloud",
+      "model": "nemotron-3-ultra:cloud"
     },
     "commit_message_model": {
       "provider": "ollama",
-      "model": "nemotron-3-ultra:cloud",
+      "model": "nemotron-3-ultra:cloud"
     },
-    "enable_feedback": false,
+    "enable_feedback": false
   },
   "edit_predictions": {
     "allow_data_collection": "no",
@@ -92,7 +84,7 @@
       "api_url": "http://localhost:11434",
       "prompt_format": "infer",
       "max_output_tokens": 256000,
-      "model": "gemma4:31b-cloud",
+      "model": "gemma4:31b-cloud"
     },
     "disabled_globs": [
       "**/.env*",
@@ -101,9 +93,9 @@
       "**/*.cert",
       "**/*.crt",
       "**/*.log",
-      "**/secrets.yml",
+      "**/secrets.yml"
     ],
-    "mode": "subtle",
+    "mode": "subtle"
   },
   "vim_mode": true,
   "relative_line_numbers": "enabled",
@@ -117,25 +109,25 @@
   "tabs": {
     "file_icons": true,
     "git_status": true,
-    "close_position": "left",
+    "close_position": "left"
   },
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware",
-    "background_coloring": "indent_aware",
+    "background_coloring": "indent_aware"
   },
   "minimap": {
-    "show": "auto",
+    "show": "auto"
   },
   "terminal": {
     "show_count_badge": true,
     "scrollbar": {
-      "show": "system",
+      "show": "system"
     },
-    "copy_on_select": true,
+    "copy_on_select": true
   },
   "telemetry": {
-    "metrics": false,
+    "metrics": false
   },
   "semantic_tokens": "combined",
   "lsp": {
@@ -148,24 +140,24 @@
           "constantValues": true,
           "functionTypeParameters": true,
           "parameterNames": true,
-          "rangeVariableTypes": true,
-        },
-      },
+          "rangeVariableTypes": true
+        }
+      }
     },
     "solargraph": {
       "initialization_options": {
         "diagnostics": true,
-        "formatting": true,
-      },
+        "formatting": true
+      }
     },
     "terraform-ls": {
       "initialization_options": {
         "experimentalFeatures": {
           "prefillRequiredFields": true,
-          "validateOnSave": true,
-        },
-      },
-    },
+          "validateOnSave": true
+        }
+      }
+    }
   },
   "languages": {
     "Python": {
@@ -173,29 +165,29 @@
       "format_on_save": "on",
       "formatter": [
         {
-          "code_action": "source.organizeImports.ruff",
+          "code_action": "source.organizeImports.ruff"
         },
         {
-          "code_action": "source.fixAll.ruff",
+          "code_action": "source.fixAll.ruff"
         },
         {
           "language_server": {
-            "name": "ruff",
-          },
-        },
-      ],
+            "name": "ruff"
+          }
+        }
+      ]
     },
     "Ruby": {
-      "language_servers": ["solargraph"],
+      "language_servers": ["solargraph"]
     },
     "Lua": {
       "format_on_save": "on",
       "formatter": {
         "external": {
           "command": "stylua",
-          "arguments": ["-"],
-        },
-      },
+          "arguments": ["-"]
+        }
+      }
     },
     "Terraform": {
       "language_servers": ["terraform-ls"],
@@ -203,19 +195,19 @@
       "formatter": {
         "external": {
           "command": "terraform",
-          "arguments": ["fmt", "-"],
-        },
-      },
+          "arguments": ["fmt", "-"]
+        }
+      }
     },
     "TOML": {
       "format_on_save": "on",
       "formatter": {
         "external": {
           "command": "taplo",
-          "arguments": ["format", "-"],
-        },
-      },
-    },
+          "arguments": ["format", "-"]
+        }
+      }
+    }
   },
   "file_types": {
     "Helm": [
@@ -224,7 +216,7 @@
       "**/templates/**/*.yml",
       "**/helmfile.d/**/*.yaml",
       "**/helmfile.d/**/*.yml",
-      "**/values*.yaml",
+      "**/values*.yaml"
     ],
     "Ansible": [
       "**.ansible.yml",
@@ -244,7 +236,7 @@
       "**/playbooks/*.yml",
       "**/playbooks/*.yaml",
       "**playbook*.yml",
-      "**playbook*.yaml",
-    ],
-  },
+      "**playbook*.yaml"
+    ]
+  }
 }
