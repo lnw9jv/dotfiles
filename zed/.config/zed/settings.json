@@ -1,4 +1,9 @@
 {
+  "language_models": {
+    "ollama": {
+      "api_url": "https://ollama.com"
+    }
+  },
   "cli_default_open_behavior": "new_window",
   "project_panel": {
     "dock": "right"
@@ -59,21 +64,23 @@
     "harper": true
   },
   "agent": {
+    "default_profile": "ask",
     "sidebar_side": "left",
     "flexible": true,
     "dock": "left",
     "use_modifier_to_send": false,
     "default_model": {
+      "enable_thinking": true,
       "provider": "ollama",
-      "model": "gemma4:31b-cloud"
+      "model": "nemotron-3-ultra"
     },
     "inline_assistant_model": {
       "provider": "ollama",
-      "model": "nemotron-3-ultra:cloud"
+      "model": "nemotron-3-ultra"
     },
     "commit_message_model": {
       "provider": "ollama",
-      "model": "nemotron-3-ultra:cloud"
+      "model": "nemotron-3-ultra"
     },
     "enable_feedback": false
   },
