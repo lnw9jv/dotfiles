@@ -1,10 +1,10 @@
 [
-	{
-		"bindings": {
-			"cmd-p": [
-				"task::Spawn",
-				{ "task_name": "Television File Finder", "reveal_target": "center" }
-			]
-		}
-	}
+  {
+    "bindings": {
+      "cmd-p": [
+        "task::Spawn",
+        { "task_name": "Television File Finder", "reveal_target": "center" }
+      ]
+    }
+  }
 ]
