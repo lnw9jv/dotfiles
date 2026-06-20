@@ -16,7 +16,55 @@
   },
   "formatter": {},
   "permission": {
-    "bash": "ask",
+    "bash": {
+      // === DENY: destructive commands ===
+      "rm": "deny",
+      "rm *": "deny",
+      "rmdir *": "deny",
+      "git rm *": "deny",
+      "git clean *": "deny",
+      "kubectl delete *": "deny",
+      "terraform destroy": "deny",
+      "terraform destroy *": "deny",
+      "docker rm *": "deny",
+      "docker rmi *": "deny",
+      // === ALLOW: git ===
+      "git": "allow",
+      "git *": "allow",
+      // === ALLOW: read-only filesystem ===
+      "ls": "allow",
+      "ls *": "allow",
+      "cat *": "allow",
+      "find *": "allow",
+      "grep *": "allow",
+      "which *": "allow",
+      "pwd": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "echo *": "allow",
+      "wc *": "allow",
+      "diff *": "allow",
+      // === ALLOW: modern alternatives ===
+      "rg *": "allow",
+      "fd *": "allow",
+      // === ALLOW: GitHub CLI ===
+      "gh *": "allow",
+      // === ALLOW: package managers ===
+      "npm run *": "allow",
+      "npm test": "allow",
+      "pnpm *": "allow",
+      "bun run *": "allow",
+      "bun test": "allow",
+      // === ALLOW: infrastructure read-only ===
+      "terraform plan": "allow",
+      "terraform validate": "allow",
+      "terraform fmt": "allow",
+      "kubectl get *": "allow",
+      "kubectl describe *": "allow",
+      "kubectl logs *": "allow",
+      // === catch-all ===
+      "*": "ask",
+    },
     "edit": "ask",
     "read": "allow",
     "grep": "allow",
