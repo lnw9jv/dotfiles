@@ -17,9 +17,9 @@
   "agent_servers": {
     "opencode": {
       "default_config_options": {
-        "mode": "plan",
+        "mode": "build",
         "effort": "high",
-        "model": "opencode/nemotron-3-ultra-free"
+        "model": "ollama-cloud/nemotron-3-ultra"
       },
       "type": "registry"
     },
