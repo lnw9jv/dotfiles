@@ -16,6 +16,26 @@
   },
   "formatter": {},
   "permission": {
+    "external_directory": {
+      "~/.**": "deny",
+      "~/.ssh/**": "deny",
+      "~/.aws/**": "deny",
+      "~/.config/gcloud/**": "deny",
+      "~/.docker/**": "deny",
+      "~/.npmrc": "deny",
+      "~/.yarnrc": "deny",
+      "~/.pnpmrc": "deny",
+      "~/.netrc": "deny",
+      "**/.env*": "deny",
+      "**/secrets/**": "deny",
+      "**/credentials/**": "deny",
+      "**/*.pem": "deny",
+      "**/*.key": "deny",
+      "**/*.crt": "deny",
+      "**/id_rsa*": "deny",
+      "**/id_ed25519*": "deny",
+      "*": "allow"
+    },
     "bash": {
       // === DENY: destructive commands ===
       "rm": "deny",
