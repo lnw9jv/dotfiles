@@ -275,7 +275,9 @@
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "network": {
-      "allowUnixSockets": ["/var/run/docker.sock"],
+      "allowUnixSockets": [
+        "/var/run/docker.sock"
+      ],
       "allowLocalBinding": true
     },
     "excludedCommands": [
@@ -293,5 +295,6 @@
     ]
   },
   "advisorModel": "opus",
-  "theme": "dark"
+  "theme": "dark",
+  "tui": "fullscreen"
 }
