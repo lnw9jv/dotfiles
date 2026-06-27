@@ -34,7 +34,7 @@
       "**/*.crt": "deny",
       "**/id_rsa*": "deny",
       "**/id_ed25519*": "deny",
-      "*": "allow"
+      "*": "allow",
     },
     "bash": {
       // === DENY: destructive commands ===
@@ -126,5 +126,8 @@
       "command": ["mempalace-mcp"],
     },
   },
-  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
+  "plugin": [
+    "superpowers@git+https://github.com/obra/superpowers.git",
+    "@dietrichgebert/ponytail",
+  ],
 }
