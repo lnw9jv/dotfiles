@@ -58,6 +58,7 @@ zinit wait lucid for \
     OMZP::gcloud \
     OMZP::ssh \
     OMZP::docker \
+    OMZP::argocd \
     OMZP::minikube \
     OMZP::rust \
     OMZP::gem \
@@ -73,7 +74,7 @@ zinit wait lucid as"completion" for \
 #     OMZP::httpie/_httpie
 
 # Load custom plugins
-zinit ice wait lucid multisrc"(argocd|awsctx|k8sgpt|kafkactl|kubectl-argo-rollouts|popeye|pulumi|goose|opencode|television|tenv|terraform|sem-cli).plugin.zsh"
+zinit ice wait lucid multisrc"(awsctx|k8sgpt|kafkactl|kubectl-argo-rollouts|popeye|pulumi|goose|opencode|television|tenv|terraform|sem-cli).plugin.zsh"
 zinit load "$CUSTOM_ZSH_CONFIG/plugins"
 
 # Add completions to fpath
