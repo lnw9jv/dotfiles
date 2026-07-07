@@ -191,6 +191,19 @@
     ],
     "disableBypassPermissionsMode": "disable"
   },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "mempalace@mempalace": true,
     "claude-api@anthropic-agent-skills": true,
@@ -225,7 +238,9 @@
     "aws-core@claude-plugins-official": true,
     "aws-dev-toolkit@claude-plugins-official": true,
     "aws-agents@claude-plugins-official": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "code-modernization@claude-plugins-official": true,
+    "hookify@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -295,19 +310,6 @@
     ]
   },
   "advisorModel": "opus",
-  "theme": "dark",
   "tui": "fullscreen",
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "rtk hook claude"
-          }
-        ]
-      }
-    ]
-  }
+  "theme": "dark"
 }
