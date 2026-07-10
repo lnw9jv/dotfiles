@@ -20,9 +20,6 @@ zinit for \
     OMZP::brew \
     OMZP::starship
 
-# zinit ice multisrc"lib/{git,history,key-bindings,directories,clipboard,grep,theme-and-appearance}.zsh plugins/{brew,starship}/*.plugin.zsh"
-# zinit load ohmyzsh/ohmyzsh
-
 # Load custom env
 zinit ice wait lucid
 zinit snippet "$CUSTOM_ZSH_CONFIG/env.zsh"
@@ -69,9 +66,6 @@ zinit wait lucid for \
     OMZP::1password \
     OMZP::tailscale \
     OMZP::colored-man-pages
-
-# zinit ice wait lucid multisrc"plugins/{1password,argocd,aws,bun,colored-man-pages,docker,fzf,gcloud,git,kubectl,minikube,mise,podman,rust,ssh,tailscale,zoxide}/*.plugin.zsh"
-# zi load ohmyzsh/ohmyzsh
 
 # Load completions
 zinit wait lucid as"completion" for \
