@@ -8,4 +8,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_codex" ]]; then
     _comps[codex]=_codex
 fi
 
-codex completion zsh >|"$ZSH_CACHE_DIR/completions/_codex" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_codex" || "$commands[codex]" -nt "$ZSH_CACHE_DIR/completions/_codex" ]]; then
+    codex completion zsh >|"$ZSH_CACHE_DIR/completions/_codex" &|
+fi

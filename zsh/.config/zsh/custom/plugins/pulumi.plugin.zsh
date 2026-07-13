@@ -8,4 +8,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_pulumi" ]]; then
     _comps[pulumi]=_pulumi
 fi
 
-pulumi gen-completion zsh >|"$ZSH_CACHE_DIR/completions/_pulumi" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_pulumi" || "$commands[pulumi]" -nt "$ZSH_CACHE_DIR/completions/_pulumi" ]]; then
+    pulumi gen-completion zsh >|"$ZSH_CACHE_DIR/completions/_pulumi" &|
+fi

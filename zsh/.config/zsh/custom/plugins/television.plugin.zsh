@@ -4,8 +4,10 @@ fi
 
 local _tv_init_cache="${ZSH_CACHE_DIR}/television-init.zsh"
 
-# Regenerate shell integration cache in background on every shell start
-tv init zsh >|"$_tv_init_cache" &|
+# Regenerate shell integration cache in background when tv binary is newer
+if [[ ! -f "$_tv_init_cache" || "$commands[tv]" -nt "$_tv_init_cache" ]]; then
+    tv init zsh >|"$_tv_init_cache" &|
+fi
 
 # Source from cache (fast path) or eval directly on first run
 if [[ -f "$_tv_init_cache" ]]; then

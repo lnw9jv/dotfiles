@@ -8,4 +8,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_kafkactl" ]]; then
     _comps[kafkactl]=_kafkactl
 fi
 
-kafkactl completion zsh >|"$ZSH_CACHE_DIR/completions/_kafkactl" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_kafkactl" || "$commands[kafkactl]" -nt "$ZSH_CACHE_DIR/completions/_kafkactl" ]]; then
+    kafkactl completion zsh >|"$ZSH_CACHE_DIR/completions/_kafkactl" &|
+fi

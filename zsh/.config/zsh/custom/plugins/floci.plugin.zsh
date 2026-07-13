@@ -8,4 +8,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_floci" ]]; then
     _comps[floci]=_floci
 fi
 
-floci completion zsh >|"$ZSH_CACHE_DIR/completions/_floci" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_floci" || "$commands[floci]" -nt "$ZSH_CACHE_DIR/completions/_floci" ]]; then
+    floci completion zsh >|"$ZSH_CACHE_DIR/completions/_floci" &|
+fi

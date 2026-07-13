@@ -8,4 +8,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_tenv" ]]; then
     _comps[tenv]=_tenv
 fi
 
-tenv completion zsh >|"$ZSH_CACHE_DIR/completions/_tenv" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_tenv" || "$commands[tenv]" -nt "$ZSH_CACHE_DIR/completions/_tenv" ]]; then
+    tenv completion zsh >|"$ZSH_CACHE_DIR/completions/_tenv" &|
+fi

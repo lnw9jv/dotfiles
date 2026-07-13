@@ -20,8 +20,7 @@ zinit for \
     OMZP::brew \
     OMZP::starship
 
-# Load custom env
-zinit ice wait lucid
+# Load custom env (synchronous — PATH must be correct at first prompt)
 zinit snippet "$CUSTOM_ZSH_CONFIG/env.zsh"
 
 mkdir -p "$ZSH_CACHE_DIR/completions"
@@ -76,6 +75,8 @@ bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 
 # History settings (on top of OMZL::history.zsh defaults)
+HISTSIZE=50000
+SAVEHIST=50000
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS

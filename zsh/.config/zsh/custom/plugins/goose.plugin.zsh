@@ -8,4 +8,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_goose" ]]; then
     _comps[goose]=_goose
 fi
 
-goose completion zsh >|"$ZSH_CACHE_DIR/completions/_goose" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_goose" || "$commands[goose]" -nt "$ZSH_CACHE_DIR/completions/_goose" ]]; then
+    goose completion zsh >|"$ZSH_CACHE_DIR/completions/_goose" &|
+fi

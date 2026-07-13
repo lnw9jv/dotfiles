@@ -15,6 +15,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export CUSTOM_ZSH_CONFIG="$HOME/.config/zsh/custom"
 
-if [[ "$TERM" == "xterm-ghostty" ]] || [[ -z "$TERM" ]] || ! tput -V >/dev/null 2>&1; then
+if [[ -o interactive ]] && { [[ "$TERM" == "xterm-ghostty" ]] || [[ -z "$TERM" ]] || ! tput -V >/dev/null 2>&1 }; then
     export TERM='xterm-256color'
 fi

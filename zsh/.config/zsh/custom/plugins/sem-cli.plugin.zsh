@@ -8,4 +8,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_sem" ]]; then
     _comps[sem]=_sem
 fi
 
-sem completions zsh >|"$ZSH_CACHE_DIR/completions/_sem" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_sem" || "$commands[sem]" -nt "$ZSH_CACHE_DIR/completions/_sem" ]]; then
+    sem completions zsh >|"$ZSH_CACHE_DIR/completions/_sem" &|
+fi

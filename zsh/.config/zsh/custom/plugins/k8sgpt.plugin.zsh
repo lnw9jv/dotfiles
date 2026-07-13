@@ -8,4 +8,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_k8sgpt" ]]; then
     _comps[k8sgpt]=_k8sgpt
 fi
 
-k8sgpt completion zsh >|"$ZSH_CACHE_DIR/completions/_k8sgpt" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_k8sgpt" || "$commands[k8sgpt]" -nt "$ZSH_CACHE_DIR/completions/_k8sgpt" ]]; then
+    k8sgpt completion zsh >|"$ZSH_CACHE_DIR/completions/_k8sgpt" &|
+fi

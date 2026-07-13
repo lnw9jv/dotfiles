@@ -10,4 +10,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_awsctx" ]]; then
     _comps[awsctx]=_awsctx
 fi
 
-command awsctx completion zsh >|"$ZSH_CACHE_DIR/completions/_awsctx" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_awsctx" || "$commands[awsctx]" -nt "$ZSH_CACHE_DIR/completions/_awsctx" ]]; then
+    command awsctx completion zsh >|"$ZSH_CACHE_DIR/completions/_awsctx" &|
+fi

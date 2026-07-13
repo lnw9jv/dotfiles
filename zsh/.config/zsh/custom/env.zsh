@@ -7,7 +7,7 @@ if (($+commands[uv])); then
 fi
 
 if (($+commands[brew])); then
-    HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
+    HOMEBREW_COMMAND_NOT_FOUND_HANDLER="${HOMEBREW_REPOSITORY:-$(brew --repository)}/Library/Homebrew/command-not-found/handler.sh"
     [[ -f $HOMEBREW_COMMAND_NOT_FOUND_HANDLER ]] && source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER"
 fi
 
@@ -21,32 +21,29 @@ fi
 
 case "$(uname)" in
 Darwin)
-    export PATH="$HOMEBREW_PREFIX/opt/curl/bin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/python/libexec/bin:$PATH"
-
-    export PATH="$HOMEBREW_PREFIX/opt/gawk/libexec/gnubin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/gnu-which/libexec/gnubin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/gnu-time/libexec/gnubin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/gnu-units/libexec/gnubin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/inetutils/libexec/gnubin:$PATH"
-
-    export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
-    export PATH="$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
-
-    # export PATH="$HOMEBREW_PREFIX/opt/uutils-coreutils/libexec/uubin:$PATH"
-    # export PATH="$HOMEBREW_PREFIX/opt/uutils-diffutils/libexec/uubin:$PATH"
-    # export PATH="$HOMEBREW_PREFIX/opt/uutils-findutils/libexec/uubin:$PATH"
+    path=(
+        $HOME/.cargo/bin
+        $HOMEBREW_PREFIX/opt/rustup/bin
+        $HOMEBREW_PREFIX/opt/findutils/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/inetutils/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/grep/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/gnu-units/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/gnu-time/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/gnu-which/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/gawk/libexec/gnubin
+        $HOMEBREW_PREFIX/opt/python/libexec/bin
+        $HOMEBREW_PREFIX/opt/ruby/bin
+        $HOMEBREW_PREFIX/opt/curl/bin
+        $path
+    )
 
     export LDFLAGS="-L$HOMEBREW_PREFIX/opt/curl/lib"
     export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/curl/include"
     export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/curl/lib/pkgconfig"
 
     export GROOVY_HOME="$HOMEBREW_PREFIX/opt/groovy/libexec"
-
-    export PATH="$HOME/.cargo/bin:$HOMEBREW_PREFIX/opt/rustup/bin:$PATH"
     ;;
 esac

@@ -8,4 +8,6 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_kubectl-argo-rollouts" ]]; then
     _comps[kubectl - argo - rollouts]=_kubectl-argo-rollouts
 fi
 
-kubectl-argo-rollouts completion zsh >|"$ZSH_CACHE_DIR/completions/_kubectl-argo-rollouts" &|
+if [[ ! -f "$ZSH_CACHE_DIR/completions/_kubectl-argo-rollouts" || "$commands[kubectl-argo-rollouts]" -nt "$ZSH_CACHE_DIR/completions/_kubectl-argo-rollouts" ]]; then
+    kubectl-argo-rollouts completion zsh >|"$ZSH_CACHE_DIR/completions/_kubectl-argo-rollouts" &|
+fi
