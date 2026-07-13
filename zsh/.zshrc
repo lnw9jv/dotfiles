@@ -24,26 +24,7 @@ zinit for \
 zinit ice wait lucid
 zinit snippet "$CUSTOM_ZSH_CONFIG/env.zsh"
 
-# Function to setup zinit completions directory
-setup_zinit_completions() {
-    local completions_dir="$ZSH_CACHE_DIR/completions"
-
-    if [[ ! -d "$completions_dir" ]]; then
-        echo "Creating zinit completions directory..."
-        mkdir -p "$completions_dir" || {
-            echo "Error: Failed to create $completions_dir"
-            return 1
-        }
-    fi
-
-    chmod 755 "$completions_dir" || {
-        echo "Error: Failed to set permissions for $completions_dir"
-        return 1
-    }
-}
-
-# Run the setup
-setup_zinit_completions
+mkdir -p "$ZSH_CACHE_DIR/completions"
 
 # Load Zinit's completion system
 zinit ice wait lucid as"completion"
@@ -53,7 +34,6 @@ zinit snippet "$ZINIT_HOME/_zinit"
 zinit wait lucid for \
     OMZP::git \
     OMZP::fzf \
-    OMZP::zoxide \
     OMZP::aws \
     OMZP::gcloud \
     OMZP::ssh \
@@ -70,11 +50,9 @@ zinit wait lucid for \
 # Load completions
 zinit wait lucid as"completion" for \
     OMZP::terraform/_terraform
-#     OMZP::redis-cli/_redis-cli \
-#     OMZP::httpie/_httpie
 
 # Load custom plugins
-zinit ice wait lucid multisrc"{awsctx,floci,goose,k8sgpt,kafkactl,kubectl-argo-rollouts,opencode,popeye,pulumi,sem-cli,television,tenv,terraform,zed}.plugin.zsh"
+zinit ice wait lucid multisrc"*.plugin.zsh"
 zinit load "$CUSTOM_ZSH_CONFIG/plugins"
 
 # Add completions to fpath
@@ -97,15 +75,11 @@ WORDCHARS="${WORDCHARS/./}"
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 
-# History settings
-setopt appendhistory
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
+# History settings (on top of OMZL::history.zsh defaults)
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
-setopt INC_APPEND_HISTORY
 
 # Tab Completion
 setopt complete_in_word
@@ -164,13 +138,3 @@ function y() {
     fi
     rm -f -- "$tmp"
 }
-
-# eval "$(zoxide init --cmd cd zsh)"
-
-# Load system completions
-# autoload -Uz compinit
-# if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump 2>/dev/null) ]; then
-#     compinit
-# else
-#     compinit -C
-# fi

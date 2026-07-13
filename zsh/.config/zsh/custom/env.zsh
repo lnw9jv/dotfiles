@@ -1,12 +1,12 @@
-if (($ + command[zoxide])); then
+if (( $+commands[zoxide] )); then
     eval "$(zoxide init --cmd cd zsh)"
 fi
 
-if (($ + command[uv])); then
+if (( $+commands[uv] )); then
     export PATH="$(uv tool dir --bin):$PATH"
 fi
 
-if (($ + command[brew])); then
+if (( $+commands[brew] )); then
     HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
     [[ -f $HOMEBREW_COMMAND_NOT_FOUND_HANDLER ]] && source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER"
 fi
@@ -15,7 +15,7 @@ if [ -f "$HOME/.local/bin/env" ]; then
     . "$HOME/.local/bin/env"
 fi
 
-if (($ + command[dyff])); then
+if (( $+commands[dyff] )); then
     export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
 fi
 

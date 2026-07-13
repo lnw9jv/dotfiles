@@ -1,3 +1,6 @@
+# Keep PATH entries unique across nested shells
+typeset -U path PATH
+
 export EDITOR="hx"
 export VISUAL="$EDITOR"
 
