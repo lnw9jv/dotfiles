@@ -1,4 +1,4 @@
-if (( ! $+commands[floci] )); then
+if ((!$+commands[floci])); then
     return
 fi
 
@@ -8,4 +8,4 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_floci" ]]; then
     _comps[floci]=_floci
 fi
 
-floci completion zsh >| "$ZSH_CACHE_DIR/completions/_floci" &|
+floci completion zsh >|"$ZSH_CACHE_DIR/completions/_floci" &|

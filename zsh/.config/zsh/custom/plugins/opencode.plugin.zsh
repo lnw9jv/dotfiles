@@ -1,4 +1,4 @@
-if (( ! $+commands[opencode] )); then
+if ((!$+commands[opencode])); then
     return
 fi
 
@@ -8,4 +8,4 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_opencode" ]]; then
     _comps[opencode]=_opencode
 fi
 
-opencode completion zsh >| "$ZSH_CACHE_DIR/completions/_opencode" &|
+opencode completion zsh >|"$ZSH_CACHE_DIR/completions/_opencode" &|

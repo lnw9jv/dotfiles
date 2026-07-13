@@ -1,4 +1,4 @@
-if (( ! $+commands[popeye] )); then
+if ((!$+commands[popeye])); then
     return
 fi
 
@@ -8,4 +8,4 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_popeye" ]]; then
     _comps[popeye]=_popeye
 fi
 
-popeye completion zsh >| "$ZSH_CACHE_DIR/completions/_popeye" &|
+popeye completion zsh >|"$ZSH_CACHE_DIR/completions/_popeye" &|

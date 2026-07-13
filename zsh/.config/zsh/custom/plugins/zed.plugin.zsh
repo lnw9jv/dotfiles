@@ -1,4 +1,4 @@
-if (( ! $+commands[zed] )); then
+if ((!$+commands[zed])); then
     return
 fi
 
@@ -8,4 +8,4 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_zed" ]]; then
     _comps[zed]=_zed
 fi
 
-zed --completions zsh >| "$ZSH_CACHE_DIR/completions/_zed" &|
+zed --completions zsh >|"$ZSH_CACHE_DIR/completions/_zed" &|
