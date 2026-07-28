@@ -1,109 +1,128 @@
 # dotfiles
 
-Personal macOS dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
+Personal macOS configuration managed as a collection of independent [GNU Stow](https://www.gnu.org/software/stow/) packages.
 
-## Structure
+Each package directory mirrors paths below `$HOME`, so configurations can be installed individually instead of treating the repository as an all-or-nothing setup.
 
-Each top-level directory mirrors the home directory structure so Stow can symlink configs directly.
+## Highlights
 
-```
-dotfiles/
-├── bash/          # Bash config (.bash_profile, .bashrc)
-├── claude-code/   # Claude Code settings & skills
-├── cmux/          # cmux session manager
-├── fish/          # Fish shell config
-├── fsh/           # fast-syntax-highlighting theme
-├── ghostty/       # Ghostty terminal
-├── goose/         # Goose AI agent hints
-├── helix/         # Helix editor
-├── k9s/           # k9s Kubernetes TUI
-├── kitty/         # Kitty terminal
-├── lazygit/       # Lazygit TUI git client
-├── neovim/        # Neovim (lazy.nvim)
-├── nushell/       # Nushell
-├── opencode/      # Opencode AI editor
-├── starship/      # Starship prompt
-├── tmux/          # tmux
-├── tv/            # Television fuzzy finder
-├── vim/           # Vim
-├── wezterm/       # WezTerm terminal
-├── yazi/          # Yazi file manager
-├── zed/           # Zed editor
-└── zsh/           # Zsh config (.zshrc, .zshenv, .zprofile, custom plugins)
-```
+- **Shells:** Zsh with [zinit](https://github.com/zdharma-continuum/zinit), plus Bash, Fish, and Nushell configurations.
+- **Editors:** Helix, Neovim, Vim, and Zed.
+- **Terminals:** Ghostty, Kitty, WezTerm, and tmux.
+- **CLI and TUI tools:** Starship, Yazi, Television, Lazygit, k9s, and Herdr.
+- **AI tools:** Claude Code, Goose, and OpenCode.
+- **Look and feel:** Catppuccin Frappé across supported tools, paired with JetBrainsMono Nerd Font Mono.
 
-## Setup
+## Quick Start
 
 ### Prerequisites
+
+- macOS
+- [Homebrew](https://brew.sh/)
+- Git
+- GNU Stow
+
+Install Stow with Homebrew:
 
 ```sh
 brew install stow
 ```
 
-### Install
-
-Clone the repo and stow whichever configs you want:
+Clone the repository into your home directory:
 
 ```sh
-git clone <repo-url> ~/.dotfiles
+git clone git@github.com:lnw9jv/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-
-# Symlink individual configs
-stow ghostty
-stow neovim
-stow zsh
-
-# Or symlink everything at once
-stow */
 ```
 
-## What's Inside
+Review a package, then create its symlinks with Stow:
 
-### Shell — Zsh + zinit
+```sh
+stow zsh
+stow ghostty
+stow neovim
+```
 
-- **Plugin manager**: [zinit](https://github.com/zdharma-continuum/zinit) with turbo mode for fast startup
-- **OMZ libraries**: git, history, key-bindings, directories, clipboard, grep
-- **Plugins**: git, eza, fzf, zoxide, aws, gcloud, docker, minikube, fluxcd, rust, asdf, 1password, tailscale, and more
-- **Completion plugins**: fzf-tab, zsh-completions, fast-syntax-highlighting, zsh-autopair, zsh-you-should-use
-- **Custom plugins**: argocd, goose, k8sgpt, kafkactl, kubectl-argo-rollouts, popeye, pulumi, sem-cli, television, tenv, terraform
+Stow targets the parent directory by default, so running these commands from `~/.dotfiles` creates links below `$HOME`.
+
+## Packages
+
+### Shells and Prompt
+
+| Package | Configuration |
+| --- | --- |
+| `bash` | `.bash_profile`, `.bashrc` |
+| `fish` | `.config/fish/` |
+| `nushell` | `.config/nushell/` |
+| `starship` | `.config/starship.toml` |
+| `zsh` | `.zshrc`, `.zshenv`, `.zprofile`, and custom plugins |
 
 ### Editors
 
-| Editor | Config path |
-|--------|-------------|
-| Helix (default `$EDITOR`) | `helix/.config/helix/` |
-| Neovim | `neovim/.config/nvim/` |
-| Vim | `vim/.vimrc` |
-| Zed | `zed/.config/zed/` |
+| Package | Configuration |
+| --- | --- |
+| `helix` | `.config/helix/` |
+| `neovim` | `.config/nvim/` |
+| `vim` | `.vimrc` |
+| `zed` | `.config/zed/` |
 
-### Terminals
+### Terminals and Multiplexers
 
-| Terminal | Config path |
-|----------|-------------|
-| Ghostty | `ghostty/.config/ghostty/config` |
-| Kitty | `kitty/.config/kitty/` |
-| WezTerm | `wezterm/.config/wezterm/wezterm.lua` |
+| Package | Configuration |
+| --- | --- |
+| `ghostty` | `.config/ghostty/` |
+| `kitty` | `.config/kitty/` |
+| `tmux` | `.tmux.conf` |
+| `wezterm` | `.config/wezterm/` |
 
-### Other Tools
+### CLI and TUI Tools
 
-| Tool | Config path |
-|------|-------------|
-| Starship prompt | `starship/.config/starship.toml` |
-| tmux | `tmux/.tmux.conf` |
-| Television fuzzy finder | `tv/.config/television/` |
-| Yazi file manager | `yazi/.config/yazi/` |
-| k9s | `k9s/.config/k9s/` |
-| fsh theme | `fsh/.config/fsh/` |
-| Claude Code | `claude-code/.claude/` |
-| Goose AI agent | `goose/.config/goose/` |
-| Nushell | `nushell/.config/nushell/` |
-| Lazygit | `lazygit/.config/lazygit/config.yml` |
-| cmux session manager | `cmux/.config/cmux/` |
-| Fish shell | `fish/.config/fish/` |
-| Opencode AI editor | `opencode/.config/opencode/` |
+| Package | Configuration |
+| --- | --- |
+| `fsh` | `.config/fsh/` |
+| `herdr` | `.config/herdr/` |
+| `k9s` | `.config/k9s/` |
+| `lazygit` | `.config/lazygit/` |
+| `tv` | `.config/television/` |
+| `yazi` | `.config/yazi/` |
 
-## Theme
+### AI Tools
 
-[Catppuccin Frappe](https://github.com/catppuccin/catppuccin) is applied consistently across terminals, editors, and TUI tools.
+| Package | Configuration |
+| --- | --- |
+| `claude-code` | `.claude/` |
+| `goose` | `.config/goose/` |
+| `opencode` | `.config/opencode/` |
 
-**Font**: JetBrainsMono Nerd Font Mono
+## Maintenance
+
+Install another package after cloning:
+
+```sh
+stow yazi
+```
+
+Refresh links after files or directories move inside a package:
+
+```sh
+stow --restow zsh
+```
+
+Remove a package's symlinks without deleting its source files:
+
+```sh
+stow --delete zsh
+```
+
+Preview what Stow would change before applying it:
+
+```sh
+stow --simulate --verbose zsh
+```
+
+## Notes
+
+- These configurations are personal and opinionated. Review a package before linking it into your home directory.
+- Existing files at a target path may conflict with Stow. Back them up or move them before installing the corresponding package.
+- Applications are not installed automatically. Some configurations, including Zsh and Neovim, bootstrap plugin managers and may download dependencies when first started.
+- Packages are intentionally independent, so install only the ones relevant to your setup.
