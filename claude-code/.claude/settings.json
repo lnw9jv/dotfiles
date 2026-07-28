@@ -1,6 +1,7 @@
 {
   "env": {
-    "ENABLE_CLAUDEAI_MCP_SERVERS": "false"
+    "ENABLE_CLAUDEAI_MCP_SERVERS": "false",
+    "SUPERPOWERS_DISABLE_TELEMETRY": "1"
   },
   "attribution": {},
   "permissions": {
@@ -290,9 +291,7 @@
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "network": {
-      "allowUnixSockets": [
-        "/var/run/docker.sock"
-      ],
+      "allowUnixSockets": ["/var/run/docker.sock"],
       "allowLocalBinding": true
     },
     "excludedCommands": [
