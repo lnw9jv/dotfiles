@@ -241,7 +241,8 @@
     "aws-agents@claude-plugins-official": true,
     "ponytail@ponytail": true,
     "code-modernization@claude-plugins-official": true,
-    "hookify@claude-plugins-official": true
+    "hookify@claude-plugins-official": true,
+    "modern-web-guidance@googlechrome": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -285,13 +286,22 @@
         "repo": "anthropics/claude-plugins-community"
       },
       "autoUpdate": true
+    },
+    "googlechrome": {
+      "source": {
+        "source": "github",
+        "repo": "GoogleChrome/modern-web-guidance"
+      },
+      "autoUpdate": true
     }
   },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "network": {
-      "allowUnixSockets": ["/var/run/docker.sock"],
+      "allowUnixSockets": [
+        "/var/run/docker.sock"
+      ],
       "allowLocalBinding": true
     },
     "excludedCommands": [
