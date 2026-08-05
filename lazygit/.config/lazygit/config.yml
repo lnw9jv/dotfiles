@@ -1,4 +1,4 @@
 git:
-  pagers:
-    - useExternalDiffGitConfig: true
+  diffRenderers:
+    - type: extDiff
   parseEmoji: true
