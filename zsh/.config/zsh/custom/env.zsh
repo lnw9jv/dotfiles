@@ -37,6 +37,7 @@ Darwin)
         $HOMEBREW_PREFIX/opt/python/libexec/bin
         $HOMEBREW_PREFIX/opt/ruby/bin
         $HOMEBREW_PREFIX/opt/curl/bin
+        $HOMEBREW_PREFIX/opt/libpq/bin
         $path
     )
 
