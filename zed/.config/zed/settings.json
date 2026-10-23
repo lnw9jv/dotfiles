@@ -35,9 +35,6 @@
     "claude-acp": {
       "type": "registry"
     },
-    "goose": {
-      "type": "registry"
-    },
     "github-copilot-cli": {
       "type": "registry"
     },
@@ -61,33 +58,32 @@
     "gh_grep": {
       "url": "https://mcp.grep.app",
       "enabled": true
-    },
-    "deepwiki": {
-      "url": "https://mcp.deepwiki.com/mcp",
-      "enabled": true
     }
   },
   "auto_update_extensions": {
     "harper": true
   },
   "agent": {
+    "threads_sidebar": {
+      "position": "left"
+    },
     "default_profile": "ask",
-    "sidebar_side": "left",
     "flexible": true,
     "dock": "left",
     "use_modifier_to_send": false,
     "default_model": {
+      "effort": "low",
       "enable_thinking": true,
-      "provider": "ollama",
-      "model": "nemotron-3-ultra"
+      "provider": "openai-subscribed",
+      "model": "gpt-6.1-sol"
     },
     "inline_assistant_model": {
       "provider": "ollama",
       "model": "nemotron-3-ultra"
     },
     "commit_message_model": {
-      "provider": "ollama",
-      "model": "nemotron-3-ultra"
+      "provider": "openai-subscribed",
+      "model": "gpt-6-luna"
     },
     "enable_feedback": false
   },
