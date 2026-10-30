@@ -1,4 +1,5 @@
 {
+  "diff_view_style": "unified",
   "format_on_save": "on",
   "git": {
     "inline_blame": {
@@ -83,7 +84,7 @@
     },
     "commit_message_model": {
       "provider": "openai-subscribed",
-      "model": "gpt-6-luna"
+      "model": "gpt-6.1-terra"
     },
     "enable_feedback": false
   },
