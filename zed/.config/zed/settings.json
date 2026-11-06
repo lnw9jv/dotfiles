@@ -4,7 +4,8 @@
   "git": {
     "inline_blame": {
       "location": "inline"
-    }
+    },
+    "worktree_directory": ".worktrees"
   },
   "language_models": {
     "ollama": {
