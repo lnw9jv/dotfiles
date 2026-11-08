@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  // V2 accepts these settings but does not start language servers yet.
   "lsp": {
     "ruff": {
       "command": ["ruff", "server"],
@@ -15,118 +16,120 @@
     },
   },
   "formatter": {},
-  "permission": {
-    "external_directory": {
-      "~/.**": "deny",
-      "~/.ssh/**": "deny",
-      "~/.aws/**": "deny",
-      "~/.config/gcloud/**": "deny",
-      "~/.docker/**": "deny",
-      "~/.npmrc": "deny",
-      "~/.yarnrc": "deny",
-      "~/.pnpmrc": "deny",
-      "~/.netrc": "deny",
-      "**/.env*": "deny",
-      "**/secrets/**": "deny",
-      "**/credentials/**": "deny",
-      "**/*.pem": "deny",
-      "**/*.key": "deny",
-      "**/*.crt": "deny",
-      "**/id_rsa*": "deny",
-      "**/id_ed25519*": "deny",
-      "*": "allow",
-    },
-    "bash": {
-      // === DENY: destructive commands ===
-      "rm": "deny",
-      "rm *": "deny",
-      "rmdir *": "deny",
-      "git rm *": "deny",
-      "git clean *": "deny",
-      "kubectl delete *": "deny",
-      "terraform destroy": "deny",
-      "terraform destroy *": "deny",
-      "docker rm *": "deny",
-      "docker rmi *": "deny",
-      // === ALLOW: git ===
-      "git": "allow",
-      "git *": "allow",
-      // === ALLOW: read-only filesystem ===
-      "ls": "allow",
-      "ls *": "allow",
-      "cat *": "allow",
-      "find *": "allow",
-      "grep *": "allow",
-      "which *": "allow",
-      "pwd": "allow",
-      "head *": "allow",
-      "tail *": "allow",
-      "echo *": "allow",
-      "wc *": "allow",
-      "diff *": "allow",
-      // === ALLOW: modern alternatives ===
-      "rg *": "allow",
-      "fd *": "allow",
-      // === ALLOW: GitHub CLI ===
-      "gh *": "allow",
-      // === ALLOW: package managers ===
-      "npm run *": "allow",
-      "npm test": "allow",
-      "pnpm *": "allow",
-      "bun run *": "allow",
-      "bun test": "allow",
-      // === ALLOW: infrastructure read-only ===
-      "terraform plan": "allow",
-      "terraform validate": "allow",
-      "terraform fmt": "allow",
-      "kubectl get *": "allow",
-      "kubectl describe *": "allow",
-      "kubectl logs *": "allow",
-      // === catch-all ===
-      "*": "ask",
-    },
-    "edit": "ask",
-    "read": "allow",
-    "grep": "allow",
-    "glob": "allow",
-    "lsp": "allow",
-    "skill": "allow",
-    "todowrite": "allow",
-    "webfetch": "ask",
-    "websearch": "ask",
-    "question": "allow",
+  "permissions": [
+    // The last matching rule wins. Keep catch-alls before exceptions.
+    {"action": "external_directory", "resource": "*", "effect": "allow"},
+    {"action": "external_directory", "resource": "~/.**", "effect": "deny"},
+    {"action": "external_directory", "resource": "~/.ssh/**", "effect": "deny"},
+    {"action": "external_directory", "resource": "~/.aws/**", "effect": "deny"},
+    {"action": "external_directory", "resource": "~/.config/gcloud/**", "effect": "deny"},
+    {"action": "external_directory", "resource": "~/.docker/**", "effect": "deny"},
+    {"action": "external_directory", "resource": "~/.npmrc", "effect": "deny"},
+    {"action": "external_directory", "resource": "~/.yarnrc", "effect": "deny"},
+    {"action": "external_directory", "resource": "~/.pnpmrc", "effect": "deny"},
+    {"action": "external_directory", "resource": "~/.netrc", "effect": "deny"},
+    {"action": "external_directory", "resource": "**/.env*", "effect": "deny"},
+    {"action": "external_directory", "resource": "**/secrets/**", "effect": "deny"},
+    {"action": "external_directory", "resource": "**/credentials/**", "effect": "deny"},
+    {"action": "external_directory", "resource": "**/*.pem", "effect": "deny"},
+    {"action": "external_directory", "resource": "**/*.key", "effect": "deny"},
+    {"action": "external_directory", "resource": "**/*.crt", "effect": "deny"},
+    {"action": "external_directory", "resource": "**/id_rsa*", "effect": "deny"},
+    {"action": "external_directory", "resource": "**/id_ed25519*", "effect": "deny"},
+
+    {"action": "shell", "resource": "*", "effect": "ask"},
+    // === ALLOW: git ===
+    {"action": "shell", "resource": "git", "effect": "allow"},
+    {"action": "shell", "resource": "git *", "effect": "allow"},
+    // === ALLOW: read-only filesystem ===
+    {"action": "shell", "resource": "ls", "effect": "allow"},
+    {"action": "shell", "resource": "ls *", "effect": "allow"},
+    {"action": "shell", "resource": "cat *", "effect": "allow"},
+    {"action": "shell", "resource": "find *", "effect": "allow"},
+    {"action": "shell", "resource": "grep *", "effect": "allow"},
+    {"action": "shell", "resource": "which *", "effect": "allow"},
+    {"action": "shell", "resource": "pwd", "effect": "allow"},
+    {"action": "shell", "resource": "head *", "effect": "allow"},
+    {"action": "shell", "resource": "tail *", "effect": "allow"},
+    {"action": "shell", "resource": "echo *", "effect": "allow"},
+    {"action": "shell", "resource": "wc *", "effect": "allow"},
+    {"action": "shell", "resource": "diff *", "effect": "allow"},
+    // === ALLOW: modern alternatives ===
+    {"action": "shell", "resource": "rg *", "effect": "allow"},
+    {"action": "shell", "resource": "fd *", "effect": "allow"},
+    // === ALLOW: GitHub CLI ===
+    {"action": "shell", "resource": "gh *", "effect": "allow"},
+    // === ALLOW: package managers ===
+    {"action": "shell", "resource": "npm run *", "effect": "allow"},
+    {"action": "shell", "resource": "npm test", "effect": "allow"},
+    {"action": "shell", "resource": "pnpm *", "effect": "allow"},
+    {"action": "shell", "resource": "bun run *", "effect": "allow"},
+    {"action": "shell", "resource": "bun test", "effect": "allow"},
+    // === ALLOW: infrastructure read-only ===
+    {"action": "shell", "resource": "terraform plan", "effect": "allow"},
+    {"action": "shell", "resource": "terraform validate", "effect": "allow"},
+    {"action": "shell", "resource": "terraform fmt", "effect": "allow"},
+    {"action": "shell", "resource": "kubectl get *", "effect": "allow"},
+    {"action": "shell", "resource": "kubectl describe *", "effect": "allow"},
+    {"action": "shell", "resource": "kubectl logs *", "effect": "allow"},
+    // === DENY: destructive commands ===
+    {"action": "shell", "resource": "rm", "effect": "deny"},
+    {"action": "shell", "resource": "rm *", "effect": "deny"},
+    {"action": "shell", "resource": "rmdir *", "effect": "deny"},
+    {"action": "shell", "resource": "git rm *", "effect": "deny"},
+    {"action": "shell", "resource": "git clean *", "effect": "deny"},
+    {"action": "shell", "resource": "kubectl delete *", "effect": "deny"},
+    {"action": "shell", "resource": "terraform destroy", "effect": "deny"},
+    {"action": "shell", "resource": "terraform destroy *", "effect": "deny"},
+    {"action": "shell", "resource": "docker rm *", "effect": "deny"},
+    {"action": "shell", "resource": "docker rmi *", "effect": "deny"},
+
+    {"action": "edit", "resource": "*", "effect": "ask"},
+    {"action": "grep", "resource": "*", "effect": "allow"},
+    {"action": "glob", "resource": "*", "effect": "allow"},
+    {"action": "lsp", "resource": "*", "effect": "allow"},
+    {"action": "skill", "resource": "*", "effect": "allow"},
+    {"action": "todowrite", "resource": "*", "effect": "allow"},
+    {"action": "webfetch", "resource": "*", "effect": "ask"},
+    {"action": "websearch", "resource": "*", "effect": "ask"},
+    {"action": "question", "resource": "*", "effect": "allow"},
+  ],
+  "experimental": {
+    "todo": true,
   },
   "mcp": {
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp/oauth",
-    },
-    "gh_grep": {
-      "type": "remote",
-      "url": "https://mcp.grep.app",
-    },
-    "deep-wiki": {
-      "type": "remote",
-      "url": "https://mcp.deepwiki.com/mcp",
-    },
-    "aws-knowledge": {
-      "type": "remote",
-      "url": "https://knowledge-mcp.global.api.aws",
-    },
-    "microsoft-docs": {
-      "type": "remote",
-      "url": "https://learn.microsoft.com/api/mcp",
-    },
-    "kubernetes": {
-      "type": "local",
-      "command": ["kubernetes-mcp-server", "--read-only"],
-    },
-    "mempalace": {
-      "type": "local",
-      "command": ["mempalace-mcp"],
+    "servers": {
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp/oauth",
+      },
+      "gh_grep": {
+        "type": "remote",
+        "url": "https://mcp.grep.app",
+      },
+      "deep-wiki": {
+        "type": "remote",
+        "url": "https://mcp.deepwiki.com/mcp",
+      },
+      "aws-knowledge": {
+        "type": "remote",
+        "url": "https://knowledge-mcp.global.api.aws",
+      },
+      "microsoft-docs": {
+        "type": "remote",
+        "url": "https://learn.microsoft.com/api/mcp",
+      },
+      "kubernetes": {
+        "type": "local",
+        "command": ["kubernetes-mcp-server", "--read-only"],
+      },
+      "mempalace": {
+        "type": "local",
+        "command": ["mempalace-mcp"],
+      },
     },
   },
-  "plugin": [
+  "plugins": [
     "superpowers@git+https://github.com/obra/superpowers.git",
     "@dietrichgebert/ponytail",
   ],
