@@ -1,7 +1,7 @@
 # Keep PATH entries unique across nested shells
 typeset -U path PATH
 
-export EDITOR="hx"
+export EDITOR="nvim"
 export VISUAL="$EDITOR"
 
 export FZF_DEFAULT_OPTS=" \
