@@ -5,7 +5,11 @@
     "inline_blame": {
       "location": "inline"
     },
-    "worktree_directory": "../.worktrees"
+    "worktree_directory": "../.worktrees",
+    "auto_fetch": {
+      "enabled": true,
+      "interval_secs": 1800
+    }
   },
   "language_models": {
     "ollama": {
