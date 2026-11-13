@@ -13,6 +13,12 @@ return {
 			},
 			{ "folke/neodev.nvim", opts = {} },
 		},
+		config = function(_, opts)
+			for server, settings in pairs(opts.servers) do
+				vim.lsp.config(server, settings)
+				vim.lsp.enable(server)
+			end
+		end,
 		opts = {
 			servers = {
 				lua_ls = {},
