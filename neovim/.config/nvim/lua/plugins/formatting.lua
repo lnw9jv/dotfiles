@@ -6,8 +6,8 @@ return {
 		formatters_by_ft = {
 			go = { "gofmt", "golines" },
 			terraform = { "terraform_fmt" },
-			tf = { "terraform_fmt" },
-			sh = { "shfmt", "shellcheck", "shellharden" },
+			["terraform-vars"] = { "terraform_fmt" },
+			sh = { "shfmt" },
 			yaml = { "yamlfmt" },
 			rust = { "rustfmt" },
 			toml = { "taplo" },
@@ -27,11 +27,7 @@ return {
 			lsp_format = "fallback",
 		},
 		format_on_save = {
-			lsp_format = "fallback",
 			timeout_ms = 500,
-		},
-		format_after_save = {
-			lsp_format = "fallback",
 		},
 		notify_on_error = true,
 		notify_no_formatters = true,
