@@ -11,6 +11,5 @@ return {
 		require("mini.completion").setup()
 		require("mini.map").setup()
 		require("mini.move").setup()
-		require("mini.tabline").setup()
 	end,
 }

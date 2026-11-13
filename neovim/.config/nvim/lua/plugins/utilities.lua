@@ -8,8 +8,4 @@ return {
 		"nvim-lua/plenary.nvim",
 		lazy = true,
 	},
-	{
-		"sphamba/smear-cursor.nvim",
-		opts = {},
-	},
 }

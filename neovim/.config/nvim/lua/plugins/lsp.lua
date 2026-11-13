@@ -5,14 +5,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			{
-				"folke/neoconf.nvim",
-				cmd = "Neoconf",
-				config = true,
-			},
-			{ "folke/neodev.nvim", opts = {} },
-		},
 		config = function(_, opts)
 			for server, settings in pairs(opts.servers) do
 				vim.lsp.config(server, settings)

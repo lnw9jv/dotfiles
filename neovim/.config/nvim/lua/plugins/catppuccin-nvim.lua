@@ -5,7 +5,6 @@ return {
 		flavour = "frappe",
 		-- default_integrations = true,
 		integrations = {
-			cmp = true,
 			gitsigns = true,
 			nvimtree = true,
 			telescope = true,

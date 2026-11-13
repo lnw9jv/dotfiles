@@ -11,8 +11,7 @@ return {
 	},
 	{
 		"akinsho/bufferline.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		after = "catppuccin",
+		dependencies = { "catppuccin", "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("bufferline").setup({
 				highlights = require("catppuccin.special.bufferline").get_theme(),
@@ -34,12 +33,6 @@ return {
 		"RRethy/vim-illuminate",
 		config = function()
 			require("illuminate").configure({})
-		end,
-	},
-	{
-		"karb94/neoscroll.nvim",
-		config = function()
-			require("neoscroll").setup()
 		end,
 	},
 	{
