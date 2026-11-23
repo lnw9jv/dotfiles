@@ -12,6 +12,8 @@ columns = [
   { name = "RESTARTS", builtin = "RESTARTS" },
   { name = "CPU", metric = "cpu" },
   { name = "MEM", metric = "memory" },
+  { name = "IP", builtin = "IP" },
+  { name = "AGE", builtin = "AGE" },
   { name = "NODE", builtin = "NODE" },
   { name = "CPU/R", metric = "cpu-request", wide = true },
   { name = "MEM/R", metric = "memory-request", wide = true },
@@ -21,5 +23,4 @@ columns = [
   { name = "MEM/L", metric = "memory-limit", wide = true },
   { name = "%CPU/L", metric = "cpu-limit-utilization", wide = true },
   { name = "%MEM/L", metric = "memory-limit-utilization", wide = true },
-  { name = "AGE", builtin = "AGE" },
 ]
