@@ -48,3 +48,5 @@ Darwin)
     export GROOVY_HOME="$HOMEBREW_PREFIX/opt/groovy/libexec"
     ;;
 esac
+
+alias vi='nvim'
