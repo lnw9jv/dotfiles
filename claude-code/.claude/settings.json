@@ -203,6 +203,17 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh -c 'rex __internal session-start --agent claude 2>/dev/null || true'",
+            "timeout": 5
+          }
+        ]
+      }
     ]
   },
   "enabledPlugins": {
@@ -242,7 +253,8 @@
     "ponytail@ponytail": true,
     "code-modernization@claude-plugins-official": true,
     "hookify@claude-plugins-official": true,
-    "modern-web-guidance@googlechrome": true
+    "modern-web-guidance@googlechrome": true,
+    "egm@egm": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -293,6 +305,13 @@
         "repo": "GoogleChrome/modern-web-guidance"
       },
       "autoUpdate": true
+    },
+    "egm": {
+      "source": {
+        "source": "github",
+        "repo": "google/elephant-goldfish-model"
+      },
+      "autoUpdate": true
     }
   },
   "sandbox": {
@@ -321,6 +340,6 @@
   "advisorModel": "opus",
   "tui": "fullscreen",
   "theme": "dark",
-  "agentPushNotifEnabled": true,
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "agentPushNotifEnabled": true
 }
